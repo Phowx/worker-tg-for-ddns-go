@@ -1,10 +1,8 @@
 需要设置几个环境变量:`BOT_TOKEN` ,`CHAT_ID` ,`SECRET_KEY`
   
-RequestBody加了location用于区分  
-
 ```
 {
-    "location": "某地",
+    "location": "Somewhere",
     "ipv4": {
         "result": "#{ipv4Result}",
         "addr": "#{ipv4Addr}",
