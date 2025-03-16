@@ -1,9 +1,6 @@
-**需要设置几个环境变量:**  
-BOT_TOKEN: 找`@BotFather`获取  
-CHAT_ID: 找`@getuseridbot`获取  
-SECRET_KEY: 用于Authorization: Bearer,随便设置一个  
+需要设置几个环境变量:`BOT_TOKEN` ,`CHAT_ID` ,`SECRET_KEY`
   
-为RequestBody加了一个location用于区分不同的推送  
+RequestBody加了location用于区分  
 
 ```
 {
