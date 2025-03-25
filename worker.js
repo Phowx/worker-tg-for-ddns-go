@@ -45,8 +45,12 @@ export default {
       const now = new Date();
       const singaporeOffset = 8 * 60 * 60 * 1000; // 8小时的毫秒数
       const singaporeTime = new Date(now.getTime() + singaporeOffset);
-      const timeString = singaporeTime.toISOString().replace('T', ' ').substring(0, 19);
-      messageText = `🕒 时间: ${escapeMarkdown(timeString)} SGT\n` + messageText;
+      const month = (singaporeTime.getMonth() + 1).toString().padStart(2, '0');
+      const day = singaporeTime.getDate().toString().padStart(2, '0');
+      const hours = singaporeTime.getHours().toString().padStart(2, '0');
+      const minutes = singaporeTime.getMinutes().toString().padStart(2, '0');
+      const timeString = `${month}-${day} ${hours}:${minutes}`;
+      messageText = `🕒 时间: ${escapeMarkdown(timeString)}\n` + messageText;
 
       // 发送消息到Telegram
       const telegramUrl = `https://api.telegram.org/bot${env.BOT_TOKEN}/sendMessage`;
